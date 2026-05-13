@@ -1,12 +1,12 @@
 import { Component } from "react";
 import "./UserCard.css";
 const PLATFORMS_MAP = {
-  facebook: "Facebook",
-  twitter: "Twitter",
-  instagram: "Instagram",
-  linkedin: "LinkedIn",
-  youtube: "YouTube",
-  tiktok: "TikTok",
+  facebook: "fab fa-facebook-f",
+  twitter: "fab fa-twitter",
+  instagram: "fab fa-instagram",
+  linkedin: "fab fa-linkedin-in",
+  youtube: "fab fa-youtube",
+  tiktok: "fab fa-tiktok",
 };
 
 class UserCard extends Component {
@@ -59,9 +59,9 @@ class UserCard extends Component {
                   link.includes(key),
                 );
 
-                const platformName = matchedKey
+                const iconClass = matchedKey
                   ? PLATFORMS_MAP[matchedKey]
-                  : "Link";
+                  : "fas fa-link";
 
                 return (
                   <a
@@ -69,9 +69,9 @@ class UserCard extends Component {
                     href={link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="contact-btn"
+                    className="contact-btn icon-btn"
                   >
-                    {platformName}
+                    <i className={iconClass}></i>
                   </a>
                 );
               })}

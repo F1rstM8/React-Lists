@@ -1,6 +1,6 @@
-import { Component } from 'react';
-import UserCard from './UserCard';
-import './UserList.css';
+import { Component } from "react";
+import UserCard from "./UserCard";
+import "./UserList.css";
 
 class UserList extends Component {
   render() {
@@ -13,15 +13,15 @@ class UserList extends Component {
     return (
       <section className="user-list-section">
         <h1 className="main-title">Celebrity Directory</h1>
-        
+
         <ul className="user-grid">
           {validUsers.map((user) => (
             <UserCard key={user.id} {...user} />
           ))}
         </ul>
-        
+
         {validUsers.length === 0 && (
-          <p style={{ textAlign: 'center' }}>No users with complete data found.</p>
+          <p className="empty-message">No users with complete data found.</p>
         )}
       </section>
     );
